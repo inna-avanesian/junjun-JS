@@ -1,12 +1,87 @@
 "use strict"
 
 //Вивести на сторінку в один рядок через кому числа від 10 до 20.
+const numbers = [];
 
 for (let i = 10; i < 21; i++) {
-    console.log(i);
-    let num = document.querySelector("#numbres").innerHTML = i;
+    numbers.push(i);
 }
 
-for (let i = 0; i < 3; i++) {
-    console.log(i);
+document.getElementById("output").textContent = numbers.join(", ");
+
+//Вивести квадрати чисел від 10 до 20.
+for (let i = 10; i < 21; i++) {
+    let num = i*i
+    console.log(num); 
 }
+
+//3 - Вивести таблицю множення на 7.
+for (let i = 0; i < 11; i++) {
+    let num = i*7
+    console.log(num); 
+};
+
+//4 - Знайти суму всіх цілих чисел від 1 до 15.
+let sum = 15 * (15+1)/2;
+console.log(sum); 
+
+//5 - Знайти добуток усіх цілих чисел від 15 до 35.
+console.log('Знайти добуток усіх цілих чисел від 15 до 35.');
+
+let product = 1n;
+for (let i = 15n; i < 35n; i++) {
+    product *= i; // або  product = product * i;
+};
+console.log(product.toString());
+
+// Знайти середнє арифметичне всіх цілих чисел від 1 до 500.
+
+let arithmeticSum = 0;
+let amountNum = 500;
+for (let i = 1; i < 501; i++) {
+    arithmeticSum += i;
+};
+let arithmeticMean = arithmeticSum / amountNum;
+console.log(arithmeticMean);
+
+//7 - Вивести суму лише парних чисел в діапазоні від 30 до 80.
+
+let evenNumbersSum1 = 0;
+for (let i = 30; i <= 8; i++) {
+    if (i % 2 !== 0) {
+        continue;
+    }
+    evenNumbersSum1 = evenNumbersSum1 + i;
+};
+console.log(evenNumbersSum1);
+
+let evenNumbersSum2 = 0;
+
+for (let i = 30; i <= 80; i+=2) {
+    evenNumbersSum2 += i;
+};
+
+console.log(evenNumbersSum2);
+
+//8 Вивести всі числа в діапазоні від 100 до 200 кратні 3.
+// 1 найти первое кратное число после 100
+// 2 прибаслять 3 на каждом шаге до 200
+
+let multiples3 = 0;
+let multiples3First = 0;
+let startRange = 100;
+let startRangeSum = 0;
+
+for (let digit of startRange.toString()) {
+    startRangeSum += Number(digit);
+    Number(startRange);
+    startRange++;
+
+    if (startRangeSum == 3) {
+        multiples3 = startRangeSum + 3;
+    }
+}
+
+
+
+console.log("Сума цифр числа 100:", startRangeSum); 

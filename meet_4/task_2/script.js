@@ -79,39 +79,44 @@ document.getElementById("output5").textContent = number + (isPrime(number) ? " �
 // 2) while oстаток ділення на 3 поки ділиться
 // 3) Якщо получаэмо 1 то це число 3 у якомусь ступені
 
-function isPowerThree(n) {
+const isPowerThree = (n) => {
   if (n < 1) return false;           
   while (n % 3 === 0) n /= 3;        
   return n === 1;                    
-}
+};
 
-//const numberIsPowerThree = parseInt(prompt("Введіть число для перевірки, чи воно є ступенем 3:"), 10);
+// const numberIsPowerThree = parseInt(prompt("Введіть число для перевірки, чи воно є ступенем 3:"), 10);
 const numberIsPowerThree = 10;
 const resultIsPowerThree = isPowerThree(numberIsPowerThree);
 
-document.getElementById("output6").textContent = numberIsPowerThree + (resultIsPowerThree ? " - це число 3 у якомусь ступені" : " - не можна одержати шляхом зведення числа 3 у деякий ступінь");
-
-
+document.getElementById("output6").textContent = 
+  numberIsPowerThree + 
+  (resultIsPowerThree 
+    ? " - це число 3 у якомусь ступені" 
+    : " - не можна одержати шляхом зведення числа 3 у деякий ступінь"
+);
 
 //Реалізуйте функцію generateKey(length, characters), яка повертає рядок випадкових символів із набору characters довжиною length
 
-function generateKey(length, characters) {
+const generateKey = (length, characters) => {
   let result = "";
   const charactersLength = characters.length;
 
   for (let i = 0; i < length; i++) {
-    const randomIndex = Math.floor(Math.random()*charactersLength);
-    result += characters[randomIndex]; 
+    const randomIndex = Math.floor(Math.random() * charactersLength);
+    result += characters[randomIndex];
   }
 
   return result;
-}
+};
 
 const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
 const key = generateKey(16, characters);
 
 console.log(key);
 document.getElementById("output7").textContent = "Згенерований ключ: " + key;
+
+//----------------
 
 
 

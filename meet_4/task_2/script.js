@@ -91,7 +91,9 @@ const resultIsPowerThree = isPowerThree(numberIsPowerThree);
 
 document.getElementById("output6").textContent = numberIsPowerThree + (resultIsPowerThree ? " - це число 3 у якомусь ступені" : " - не можна одержати шляхом зведення числа 3 у деякий ступінь");
 
-//------------
+
+
+//Реалізуйте функцію generateKey(length, characters), яка повертає рядок випадкових символів із набору characters довжиною length
 
 function generateKey(length, characters) {
   let result = "";

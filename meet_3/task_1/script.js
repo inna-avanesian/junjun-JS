@@ -64,24 +64,12 @@ for (let i = 30; i <= 80; i+=2) {
 console.log(evenNumbersSum2);
 
 //8 Вивести всі числа в діапазоні від 100 до 200 кратні 3.
-// 1 найти первое кратное число после 100
-// 2 прибаслять 3 на каждом шаге до 200
+let result = [];
 
-let multiples3 = 0;
-let multiples3First = 0;
-let startRange = 100;
-let startRangeSum = 0;
-
-for (let digit of startRange.toString()) {
-    startRangeSum += Number(digit);
-    Number(startRange);
-    startRange++;
-
-    if (startRangeSum == 3) {
-        multiples3 = startRangeSum + 3;
-    }
+for (let i = 100; i <= 200; i++) {
+  if (i % 3 === 0) {
+    result.push(i);
+  }
 }
 
-
-
-console.log("Сума цифр числа 100:", startRangeSum); 
+console.log(result.join(", "));

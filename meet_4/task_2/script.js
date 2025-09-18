@@ -116,7 +116,25 @@ const key = generateKey(16, characters);
 console.log(key);
 document.getElementById("output7").textContent = "Згенерований ключ: " + key;
 
-//----------------
+//--------
+//1 
+
+const padString = (str, lengthString, symb, direction) => {
+  let result = "";
+  const arrStr = [...str];
+
+  if (arrStr.length < lengthString) {
+    result = (lengthString - arrStr.length) + arrStr.length;
+  } else {
+    result = (arrStr.length - lengthString);
+  }
+  
+
+  console.log(result);
+
+  return result;
+};
 
 
+const resultPadString = padString('hello', 6, '*', false);
 
